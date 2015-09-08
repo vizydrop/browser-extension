@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Vizydrop extension",
+  "version" : "0.0.1",
+  "icons" : {
+    "16" : "sources/icon-next.svg",
+    "128" : "sources/icon-next.svg"
+  },
+  "background": {
+    "persistent": true,
+    "scripts": ["background.js"]
+  },
+  "permissions" : ["tabs", "contextMenus"]
+}
