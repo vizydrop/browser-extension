@@ -10,5 +10,19 @@
     "persistent": true,
     "scripts": ["background.js"]
   },
-  "permissions" : ["tabs", "contextMenus"]
+  "browser_action": {
+    "default_icon": {
+      "16" : "sources/icon-next.svg",
+      "128" : "sources/icon-next.svg"
+    },
+    "default_title": "Vizydrop",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "permissions" : ["tabs", "activeTab", "contextMenus"]
 }

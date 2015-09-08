@@ -10,3 +10,21 @@ chrome.contextMenus.create({
         }
     }
 });
+
+chrome.tabs.onActivated.addListener(function callback(activeInfo) {
+
+    // (activeInfo.tabId)
+    // (activeInfo.windowId)
+
+    var tabId = activeInfo.tabId;
+
+    chrome.tabs.sendMessage(
+        tabId,
+        {cmd: "get-data-links"},
+        function (response) {
+            chrome.browserAction.setBadgeText({
+                tabId: tabId,
+                text: String(response.result.length)
+            });
+        });
+});
