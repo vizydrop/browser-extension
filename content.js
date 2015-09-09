@@ -17,7 +17,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
             .filter(function (a) {
                 var href = (a.getAttribute('href') || '');
                 return ['.csv', '.xls', '.json'].some(function (suffix) {
-                    return endsWith(href, suffix);
+                    return (href.indexOf('#') < 0) && endsWith(href, suffix);
                 });
             })
             .map(function (a) {

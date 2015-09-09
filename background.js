@@ -10,7 +10,9 @@ chrome.contextMenus.create({
     "onclick": function (e) {
         // var host = e.pageUrl;
         var url = (e.linkUrl || '');
-        var predicate = endsWith.bind(null, url);
+        var predicate = function (suffix) {
+            return (url.indexOf('#') < 0) && endsWith(url, suffix);
+        };
         var isSupported = supportedTypes.some(predicate);
         if (isSupported) {
             var vizyUrl = '/autourl/?url=' + encodeURI(url);
