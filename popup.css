@@ -75,7 +75,6 @@
   width: 100%;
 }
 .vizydrop-extension-popup__sources__item {
-  cursor: pointer;
   display: table-row;
   border-radius: 3px;
 }
@@ -91,6 +90,7 @@
   top: 50%;
   right: 12px;
   margin-top: -6px;
+  cursor: pointer;
 }
 .vizydrop-extension-popup__sources__file-type,
 .vizydrop-extension-popup__sources__file-name {

@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
                 });
             })
             .map(function (a) {
-                var href = (a.getAttribute('href'));
+                var href = a.href;
                 var parts = href.split('/');
                 var file = parts[parts.length - 1];
                 return {

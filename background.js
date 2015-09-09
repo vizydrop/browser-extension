@@ -13,19 +13,15 @@ chrome.contextMenus.create({
         var predicate = endsWith.bind(null, url);
         var isSupported = supportedTypes.some(predicate);
         if (isSupported) {
-            chrome.tabs.create({"url": ["http://vzdrp:8080", "?url=", encodeURI(url)].join('')});
+            var vizyUrl = '/autourl/?url=' + encodeURI(url);
+            chrome.tabs.create({"url": ["http://vzdrp:8080", vizyUrl].join('')});
         } else {
             alert('Link must be CSV, JSON or XLS format!');
         }
     }
 });
 
-chrome.tabs.onActivated.addListener(function callback(activeInfo) {
-
-    // (activeInfo.tabId)
-    // (activeInfo.windowId)
-
-    var tabId = activeInfo.tabId;
+function callback(tabId) {
 
     chrome.tabs.sendMessage(
         tabId,
@@ -33,4 +29,16 @@ chrome.tabs.onActivated.addListener(function callback(activeInfo) {
         function (response) {
             chrome.browserAction.setBadgeText({tabId: tabId, text: String(response.result.length)});
         });
+}
+
+chrome.tabs.onCreated.addListener(function (tab) {
+    callback(tab.id);
+});
+
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    callback(tabId);
+});
+
+chrome.tabs.onActivated.addListener(function (activeInfo) {
+    callback(activeInfo.tabId);
 });
