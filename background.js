@@ -1,4 +1,4 @@
-var supportedTypes = ['.csv', '.xls', '.json'];
+var supportedTypes = ['.csv', '.xls', '.json', '.xlsx'];
 
 var endsWith = function(str, suffix) {
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
@@ -18,7 +18,7 @@ chrome.contextMenus.create({
             var vizyUrl = '/autourl/?url=' + encodeURI(url);
             chrome.tabs.create({"url": ["http://vzdrp:8080", vizyUrl].join('')});
         } else {
-            alert('Link must be CSV, JSON or XLS format!');
+            alert('Link must be CSV, JSON, XLS or XLSX format!');
         }
     }
 });
