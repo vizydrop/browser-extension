@@ -16,7 +16,7 @@ chrome.contextMenus.create({
         var isSupported = supportedTypes.some(predicate);
         if (isSupported) {
             var vizyUrl = '/autourl/?url=' + encodeURI(url);
-            chrome.tabs.create({"url": ["http://vzdrp:8080", vizyUrl].join('')});
+            chrome.tabs.create({"url": ["https://vizydrop.com", vizyUrl].join('')});
         } else {
             alert('Link must be CSV, JSON, XLS or XLSX format!');
         }
