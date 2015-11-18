@@ -43,6 +43,6 @@ document.addEventListener('click', function (e) {
     if (target.classList.contains('vizydrop-icon-next')) {
         var url = target.getAttribute('data-url');
         var vizyUrl = '/autourl/?url=' + encodeURI(url);
-        chrome.tabs.create({"url": ["http://vzdrp:8080", vizyUrl].join('')});
+        chrome.tabs.create({"url": ["https://vizydrop.com", vizyUrl].join('')});
     }
 });
