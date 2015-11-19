@@ -10,7 +10,7 @@ var template = function (item) {
         '   <div class="vizydrop-extension-popup__sources__file-type">' + item.type + '</div>',
         '   <div class="vizydrop-extension-popup__sources__file-name">',
         '       ' + item.text + '(' + item.file + ')',
-        '       <div class="vizydrop-icon-next" data-url="' + item.url + '"></div>',
+        '       <div class="vizydrop-icon-next" data-url="' + item.url + '" title="Create chart"></div>',
         '   </div>',
         '</div>'
     ].join('');
