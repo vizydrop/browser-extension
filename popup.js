@@ -7,7 +7,9 @@ function doInCurrentTab(tabCallback) {
 var template = function (item) {
     return [
         '<div class="vizydrop-extension-popup__sources__item">',
-        '   <div class="vizydrop-extension-popup__sources__file-type">' + item.type + '</div>',
+        '   <div class="vizydrop-extension-popup__sources__file-type">',
+        '       <a class="vizydrop-extension-popup__sources__download-file" href="' + item.url + '" target="_blank" title="Download file">' + item.type + '</a>',
+        '   </div>',
         '   <div class="vizydrop-extension-popup__sources__file-name">',
         '       ' + item.text + '(' + item.file + ')',
         '       <div class="vizydrop-icon-next" data-url="' + item.url + '" title="Create chart"></div>',

@@ -104,6 +104,10 @@
   text-transform: uppercase;
   font-weight: 400;
 }
+.vizydrop-extension-popup__sources__download-file {
+  text-decoration: none;
+  color: #007eff;
+}
 .vizydrop-extension-popup__sources__file-name {
   position: relative;
   padding-right: 30px;
