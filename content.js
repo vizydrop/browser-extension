@@ -6,12 +6,7 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
             return str.indexOf(suffix, str.length - suffix.length) !== -1;
         };
 
-        var sel = document.querySelectorAll('a');
-        var len = sel.length;
-        var links = [];
-        for (var i = 0; i < len; i++) {
-            links.push(sel[i]);
-        }
+        var links = [].slice.call(document.querySelectorAll('a'));
 
         var res = links
             .filter(function (a) {
@@ -30,7 +25,16 @@ chrome.runtime.onMessage.addListener(function(msg, sender, sendResponse) {
                     type: (file.split('.').pop()),
                     url: href
                 };
-            });
+            })
+            .reduce(function (memo, item) {
+                var url = item.url;
+                var index = (memo
+                    .map(function (row) {
+                        return row.url;
+                    })
+                    .indexOf(url));
+                return memo.concat((index === -1) ? [item] : []);
+            }, []);
 
         sendResponse({result: res});
     }
