@@ -20,6 +20,10 @@
   margin:0;
 }
 
+.body a:focus {
+  outline:none;
+}
+
 .vizydrop-extension-popup {
   background: rgba(249, 243, 223, 0.97);
   box-shadow: 0 1px 11px 0 rgba(120, 113, 80, 0.5), 0 0 0 1px rgba(160, 153, 128, 0.27);
