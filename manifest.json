@@ -3,8 +3,8 @@
   "name": "Vizydrop extension",
   "version" : "0.0.1",
   "icons" : {
-    "16" : "sources/icon-next.svg",
-    "128" : "sources/icon-next.svg"
+    "16" : "sources/img/icon16.png",
+    "128" : "sources/img/icon128.png"
   },
   "background": {
     "persistent": true,
@@ -12,8 +12,8 @@
   },
   "browser_action": {
     "default_icon": {
-      "16" : "sources/icon-next.svg",
-      "128" : "sources/icon-next.svg"
+      "16" : "sources/img/icon16.png",
+      "128" : "sources/img/icon128.png"
     },
     "default_title": "Vizydrop",
     "default_popup": "popup.html"
