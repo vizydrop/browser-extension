@@ -8,7 +8,7 @@ var template = function (item) {
     return [
         '<div class="vizydrop-extension-popup__sources__item">',
         '   <div class="vizydrop-extension-popup__sources__file-type">',
-        '       <a class="vizydrop-extension-popup__sources__download-file" href="' + item.url + '" target="_blank" title="Download file">' + item.type + '</a>',
+        '       <a class="vizydrop-extension-popup__sources__download-file" href="' + item.url + '" target="_blank" title="Download file" download="' + item.file + '">' + item.type + '</a>',
         '   </div>',
         '   <div class="vizydrop-extension-popup__sources__file-name">',
         '       ' + item.text + '(' + item.file + ')',
