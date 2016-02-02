@@ -44,3 +44,13 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 chrome.tabs.onActivated.addListener(function (activeInfo) {
     callback(activeInfo.tabId);
 });
+
+chrome.runtime.onMessage.addListener(
+    function (msg, sender, sendResponse) {
+        if (msg.type === 'set-data-links') {
+            chrome.browserAction.setBadgeText({
+                tabId: sender.tab.id,
+                text: String(msg.result.length)
+            });
+        }
+    });
