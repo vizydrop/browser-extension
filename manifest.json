@@ -3,7 +3,7 @@
   "name": "Vizydrop",
   "short_name": "Vizydrop",
   "description": "Visualize CSV, XLS, JSON files in a simple way. Go get visual!",
-  "version" : "1.0.0",
+  "version" : "1.0.1",
   "icons" : {
     "16" : "img/icon16.png",
     "128" : "img/icon128.png"

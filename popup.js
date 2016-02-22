@@ -10,9 +10,9 @@ var template = function (item) {
         '   <div class="vizydrop-extension-popup__sources__file-type">',
         '       <a class="vizydrop-extension-popup__sources__download-file" href="' + item.url + '" target="_blank" title="Download file" download="' + item.file + '">' + item.type + '</a>',
         '   </div>',
-        '   <div class="vizydrop-extension-popup__sources__file-name">',
+        '   <div class="vizydrop-extension-popup__sources__file-name vizydrop-action-create-chart" data-url="' + item.url + '">',
         '       ' + item.text + '(' + item.file + ')',
-        '       <div class="vizydrop-icon-next" data-url="' + item.url + '" title="Create chart"></div>',
+        '       <div class="vizydrop-icon-next vizydrop-action-create-chart" title="Create chart" data-url="' + item.url + '"></div>',
         '   </div>',
         '</div>'
     ].join('');
@@ -42,7 +42,7 @@ doInCurrentTab(function (tabId) {
 
 document.addEventListener('click', function (e) {
     var target = e.target;
-    if (target.classList.contains('vizydrop-icon-next')) {
+    if (target.classList.contains('vizydrop-action-create-chart')) {
         var url = target.getAttribute('data-url');
         var vizyUrl = '/autourl/?url=' + encodeURI(url);
         chrome.tabs.create({"url": ["https://vizydrop.com", vizyUrl].join('')});
